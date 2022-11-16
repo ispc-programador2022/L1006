@@ -48,6 +48,8 @@ df.to_csv("Marcado online.csv")
 #Leemos el archivo CSV para transformar sus datos a una lista y luego exportarlos a una base de datos
 cotizacion = pd.read_csv("C:/Users/manu_/Marcado online.csv")
 
+print(cotizacion)
 #Transformamos las filas del DF en una lista para luego insertarlas en una base de datos
 Lista_valores = cotizacion.values.tolist()
 
+print(Lista_valores)
