@@ -29,17 +29,9 @@ for fila in filas:
         monedas.append(fila.find_all('span', class_="name col")[0].get_text())
         compra.append(fila.find_all('span', class_ = "buy-value")[0].get_text())
         venta.append(fila.find_all('div', class_ = "sell col")[0].get_text())
-        #try:
-            #variacion.append(fila.find_all('span', class_="percentage col")[0].get_text())
-            #print(variacion)
-       # except:
-            #variacion.append(fila.find_all('span', class_ ="percentage up col")[0].get_text())
-        
-       #except:    
-        #    variacion.append(fila.find_all('span', class_ ="percentage down col")[0].get_text())
     i += 1
 
-df = pd.DataFrame({"MONEDAS" : monedas, "COMPRA" : compra, "VENTA" : venta})#, "VARIACIÓN" : variacion})
+df = pd.DataFrame({"MONEDAS" : monedas, "COMPRA" : compra, "VENTA" : venta})
 
 print(df)
 
