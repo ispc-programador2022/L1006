@@ -32,6 +32,7 @@ for fila in filas:
         venta.append(fila.find_all('div', class_ = "sell col")[0].get_text())
     i += 1
 
+#Creamos el Dataframe con los datos recogidos del web scraping
 df = pd.DataFrame({"MONEDAS" : monedas, "COMPRA" : compra, "VENTA" : venta})
 
 print(df)
@@ -44,12 +45,3 @@ df["VENTA"] = df["VENTA"].apply(lambda x: x.replace(",","."))
 
 #Exportamos el dataframe a un archivo CSV
 df.to_csv("Marcado online.csv")
-
-#Leemos el archivo CSV para transformar sus datos a una lista y luego exportarlos a una base de datos
-cotizacion = pd.read_csv("C:/Users/manu_/Marcado online.csv")
-
-print(cotizacion)
-#Transformamos las filas del DF en una lista para luego insertarlas en una base de datos
-Lista_valores = cotizacion.values.tolist()
-
-print(Lista_valores)
